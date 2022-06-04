@@ -11,16 +11,19 @@
 
 ## Roman Stack
 - Deploy Terraform node with prereqs and tools (Deployment model: on-prem vmware/nutanix, air-gapped, cloud-native on all hyperscalers). Create Modules checked into the registry for these 
-- Deploy build runtime (docker/podman/buildah) 
-- Config data resides in git
-- Encrypt at rest secrets in a vault
-- 
+- Deploy runtime (containerd/podman/buildah). Private container registry in GHE, ECR or gcr.io
+- Config data version controlled and resides in git
+- Encrypted at rest secrets in a vault
+-  
 
 ## Miniature Easily Deployable Commodity Infrastructure For Migration 
 
-- Deploy build runtime (docker/podman/buildah) Use containerd runtime on a utility vm.
-- Small deployments of custom tools run in an automated pipeline and published to a container registry
-- Break projects into smaller composable parts for the tooling
+- Infrastructure deployments courtesy of Terraform providers for different target infrastructures.
+- Nomad(large) k3s (edge) as purpose-built infra-platform for migration tooling, build pipeline, opsX, metrics of migration
+- AuthN/AuthZ oktda/SAML/SSO External and policy (i.e. code driven)
+- Deploy/build infra. Two models : VM based and containerd runtime on a utility vm. 
+- Small deployments of custom tools run in build pipeline and publish to a private container registry artifacts 
+- Break projects into smaller composable parts for the tooling. Try to standardize as much as possible. 
 
 - Terraform configurations as standard for deployment of Utility container runtimes that will host the deployments. 
 - This is housed in a GHE repo. Can use private Git or hyperscaler container registry.
