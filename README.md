@@ -1,4 +1,4 @@
-## Ansiible Lab
+## Ansible Lab
 *What I want to do in these labs is have a disposable environments that embrace the two ways of working in provisioning and maintenence of infrastructure: declarative and proceedural paradigms. Using Terraform and Infrastructure as Code to create the scaffolding used in both learning and creating Migration Infrastructure.*
 
 - Install Controller and tools 
@@ -10,10 +10,11 @@
 *There are many ways to do the above. Another pattern, and inexpensive way would be to use Vagrant to create small infra vms to do the same locally. The key part is that the environment is using a declarative knowable method with 
 
 ## Roman Stack
-- Deploy Terraform node with prereqs and tools (Deployment model: on-prem vmware/nutanix, air-gapped, cloud-native on all hyperscalers). Create Modules cheched into the registry for these 
+- Deploy Terraform node with prereqs and tools (Deployment model: on-prem vmware/nutanix, air-gapped, cloud-native on all hyperscalers). Create Modules checked into the registry for these 
 - Deploy build runtime (docker/podman/buildah) 
-- Config data resides in git 
-
+- Config data resides in git
+- Encrypt at rest secrets in a vault
+- 
 
 ## Miniature Easily Deployable Commodity Infrastructure For Migration 
 
